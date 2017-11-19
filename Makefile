@@ -25,4 +25,4 @@ prepare:
 	$(cd ${SRC_DIR})
 	$(npm install)
 	ls -la ${SRC_DIR}
-	npm install -g pkg
+	$(npm install -g pkg)
