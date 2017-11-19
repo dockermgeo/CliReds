@@ -1,21 +1,24 @@
-SRC_DIR="$(shell pwd)/src"
+PWD="$(shell pwd)"
+SRC_DIR="$(PWD)/src"
 OS = "$(shell uname -s)"
 
 build: prepare
-	mkdir -p  ${SRC_DIR}/builds
-	pkg ${SRC_DIR}/clireds.js
-	mv clireds-* ${SRC_DIR}/builds/
-	mv ${SRC_DIR}/builds/clireds-macos ${SRC_DIR}/builds/clireds-Darwin
-	mv ${SRC_DIR}/builds/clireds-linux ${SRC_DIR}/builds/clireds-Linux
-	mv ${SRC_DIR}/builds/clireds-win.exe ${SRC_DIR}/builds/clireds-Windows.exe
-	mv ${SRC_DIR}/builds .
+	mkdir -p  ${PWD}/builds
+	cd ${SRC_DIR}
+	pkg ./clireds.js
+	mv clireds-* ${PWD}/builds
+	mv ${PWD}/builds/clireds-macos ${SRC_DIR}/builds/clireds-Darwin
+	mv ${PWD}/builds/clireds-linux ${SRC_DIR}/builds/clireds-Linux
+	mv ${PWD}/builds/clireds-win.exe ${SRC_DIR}/builds/clireds-Windows.exe
 
 install: build
-	cp builds/clireds-${OS}* /usr/local/bin/clireds
+	@echo "cp ${PWD}/builds/clireds-${OS}* /usr/local/bin/clireds"
+	cp -f ${PWD}/builds/clireds-${OS}* /usr/local/bin/clireds
 	make cleanup
 
 cleanup:
-	rm -Rf builds
+	cd /
+	rm -Rf ${PWD}
 
 prepare:
 	cd ${SRC_DIR}
