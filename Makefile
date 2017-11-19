@@ -21,8 +21,7 @@ cleanup:
 	rm -Rf ${PWD}
 
 prepare:
-	$(shell cd ${SRC_DIR})
 	@echo "cd ${SRC_DIR}"
 	ls -la ${SRC_DIR}
-	npm install
+	$(shell cd ${SRC_DIR} && npm install)
 	npm install -g pkg
