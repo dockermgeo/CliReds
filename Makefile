@@ -18,7 +18,8 @@ cleanup:
 	rm -Rf builds
 
 prepare:
-	npm install -g pkg
-	@echo "cd ${SRC_DIR}"
 	cd ${SRC_DIR}
+	@echo "cd ${SRC_DIR}"
+	ls -la
 	npm install
+	npm install -g pkg
