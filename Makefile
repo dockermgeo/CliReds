@@ -4,7 +4,7 @@ OS = "$(shell uname -s)"
 
 build: prepare
 	mkdir -p  ${PWD}/builds
-	cd ${SRC_DIR}
+	$(shell cd ${SRC_DIR})
 	pkg ./clireds.js
 	mv clireds-* ${PWD}/builds
 	mv ${PWD}/builds/clireds-macos ${SRC_DIR}/builds/clireds-Darwin
@@ -21,7 +21,7 @@ cleanup:
 	rm -Rf ${PWD}
 
 prepare:
-	cd ${SRC_DIR}
+	$(shell cd ${SRC_DIR})
 	@echo "cd ${SRC_DIR}"
 	ls -la ${SRC_DIR}
 	npm install
