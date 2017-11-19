@@ -1,0 +1,18 @@
+[
+  {
+  "namespace":"de.cloud.service.testapp",
+  "keys": {
+    "firstname":"maximilian",
+    "lastname":"mustermann",
+    "age":2
+    }
+  },
+  {
+  "namespace":"de.cloud.service.testapp2",
+  "keys": {
+    "firstname":"sabine",
+    "lastname":"mustermann",
+    "age":2
+    }
+  }
+]
