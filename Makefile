@@ -22,7 +22,7 @@ cleanup:
 
 prepare:
 	@echo "cd ${SRC_DIR}"
-	ls -la ${SRC_DIR}
 	$(cd ${SRC_DIR})
 	$(npm install)
+	ls -la ${SRC_DIR}
 	npm install -g pkg
