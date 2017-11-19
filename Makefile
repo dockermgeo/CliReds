@@ -8,13 +8,14 @@ build: prepare
 	mv ${SRC_DIR}/builds/clireds-macos ${SRC_DIR}/builds/clireds-Darwin
 	mv ${SRC_DIR}/builds/clireds-linux ${SRC_DIR}/builds/clireds-Linux
 	mv ${SRC_DIR}/builds/clireds-win.exe ${SRC_DIR}/builds/clireds-Windows.exe
+	mv ${SRC_DIR}/builds .
 
 install: build
-	cp ${SRC_DIR}/builds/clireds-${OS}* /usr/local/bin/clireds
+	cp builds/clireds-${OS}* /usr/local/bin/clireds
 	make cleanup
 
 cleanup:
-	rm -Rf ${SRC_DIR}/builds
+	rm -Rf builds
 
 prepare:
 	npm install -g pkg

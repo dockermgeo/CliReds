@@ -12,6 +12,9 @@ For Build a compiled version you need NodeJS.
 	make install
 ```
 
+## Download Compiled Version
+You can find the latestcompile in folder [builds](https://github.com/dockermgeo/CliReds/tree/master/builds)
+
 ## Usage
 Get a Key from Objectkey
 ```
