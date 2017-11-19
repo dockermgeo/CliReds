@@ -1,7 +1,11 @@
 # CliReds
 
-Clireds is a nother Client for Rediskeystores. It is based on nodejs, but you don't need a nodeJS-Installation.
-The compiled-Versions will work on Linux, MacOSx and Windows.
+Clireds is a nother Client for Rediskeystores. It is based on nodejs. 
+
+The Compiled Version don't need a installation of nodejs and can run on Linux, MaxOSx and Windows.
+
+For Build a compiled version you need NodeJS.
+
 
 ## Installation
 ```
