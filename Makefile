@@ -1,6 +1,7 @@
 PWD="$(shell pwd)"
 SRC_DIR="$(PWD)/src"
 OS = "$(shell uname -s)"
+TARGET=/usr/local/bin
 
 build: prepare
 	mkdir -p  ${PWD}/builds
@@ -12,8 +13,8 @@ build: prepare
 	mv ${PWD}/builds/clireds-win.exe ${SRC_DIR}/builds/clireds-Windows.exe
 
 install: build
-	@echo "cp ${PWD}/builds/clireds-${OS}* /usr/local/bin/clireds"
-	cp -f ${PWD}/builds/clireds-${OS}* /usr/local/bin/clireds
+	@echo "cp ${PWD}/builds/clireds-${OS}* ${TARGET}/clireds"
+	cp -f ${PWD}/builds/clireds-${OS}* ${TARGET}/clireds
 	make cleanup
 
 cleanup:
