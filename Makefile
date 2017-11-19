@@ -21,7 +21,7 @@ cleanup:
 	rm -Rf ${PWD}
 
 prepare:
-	npm install -g pkg fs-extra
+	npm install -g pkg
 
 	@echo "cd ${SRC_DIR}"
 	cd ${SRC_DIR} && npm install
