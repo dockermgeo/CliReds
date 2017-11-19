@@ -19,5 +19,5 @@ cleanup:
 
 prepare:
 	npm install -g pkg
-	cd src
+	cd ${SRC_DIR}
 	npm install
