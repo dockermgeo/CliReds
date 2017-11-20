@@ -12,7 +12,7 @@ logger.setLevel(process.env.LOG_LEVEL || 'DEBUG');
 const _port=process.env.REDIS_PORT||6379;
 const arg1=process.argv[2]||"127.0.0.1"
 const _host=process.env.REDIS_HOST||arg1;
-
+const DB_PASS=process.env.REDIS_PASSWORD;
 // REDIS-key-values
 const command = process.argv[3];
 const namespace = process.argv[4];
@@ -81,6 +81,12 @@ function usage() {
 // Connect
 var redis = require('redis');
 var client = redis.createClient(_port, _host);
+client.auth(DB_PASS, function (err) {
+  if(err){
+    printerr(err);
+  }
+  if (err) throw err;
+});
 
 switch (command) {
   case "hkeys":
